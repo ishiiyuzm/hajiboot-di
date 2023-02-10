@@ -24,4 +24,9 @@ public class AppConfig {
         return new AddCalculator();
     }
 
+    @Bean
+    ArgumentResolver argumentResolver() {
+        return new ScannerArgumentResolver();
+    }
+
 }
