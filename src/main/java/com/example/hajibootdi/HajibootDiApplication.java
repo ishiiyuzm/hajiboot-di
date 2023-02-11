@@ -1,18 +1,24 @@
 package com.example.hajibootdi;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 import java.util.Scanner;
 
 /*
-* 「@EnableAutoConfiguration」がSpringBootの自動設定を有効にするためのアノテーション
-* 「@Import(AppConfig.class)」はJavaConfigを読み込む為に@Importで@Configurationを付けた対象クラスを指定
+*「@EnableAutoConfiguration」がSpringBootの自動設定を有効にするためのアノテーション
+*「@Import(AppConfig.class)」はJavaConfigを読み込む為に@Importで@Configurationを付けた対象クラスを指定(DIコンテナに登録したいBeanを1つ1つ定義するイメージ)
+*「@ComponetScan」を付けることでそのクラスのパッケージ以下を走査して「@Component」など特定のアノテーションがついてるJavaクラスを検出しそれらを「DIコンテナ」に登録する。(DIコンテナに登録したいBeanを自動で登録するイメージ)
+*「@SpringBootApplication」は「@EnableAutoConfiguration」「@Configuration」「@ComponetScan」を合成したアノテーション
 */
-@EnableAutoConfiguration
-@Import(AppConfig.class)
+//@EnableAutoConfiguration
+//@Import(AppConfig.class)
+//@ComponentScan
+@SpringBootApplication
 public class HajibootDiApplication {
 
 	// エントリポイント

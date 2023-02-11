@@ -29,9 +29,11 @@ public class AppConfig {
         return new ScannerArgumentResolver();
     }
 
-    @Bean
-    Frontend frontend() {
-        return new Frontend();
-    }
+    // @ComponetScanを使用してみる為、コメントアウト
+    // @Import(AppConfig.class)でDIコンテナに登録する場合は、コメントアウト解除してね
+    // @Bean
+    // Frontend frontend() {
+    //     return new Frontend();
+    // }
 
 }
