@@ -21,17 +21,23 @@ public class HajibootDiApplication {
 		// 「SpringApplication.run」で「SpringBoot」アプリケーションを起動
 		ApplicationContext context = SpringApplication.run(HajibootDiApplication.class, args);
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter 2 numbers lile 'a b':");
-		ArgumentResolver argumentResolver = context.getBean(ArgumentResolver.class);
-		Argument argument = argumentResolver.resolve(System.in);
+		// Scanner scanner = new Scanner(System.in);
+		// System.out.print("Enter 2 numbers lile 'a b':");
+		// ArgumentResolver argumentResolver = context.getBean(ArgumentResolver.class);
+		// Argument argument = argumentResolver.resolve(System.in);
 		
 		// 「getBean」メソッドを用いて「DIコンテナ」から「Calculator型」のインスタンスを生成
 		// 「Calculator」の実体は「DIコンテナ」によって解決されapplicationは意識しない。
-		Calculator calculator = context.getBean(Calculator.class);
-		int result = calculator.calc(argument.getA(), argument.getB()); 
+		// Calculator calculator = context.getBean(Calculator.class);
+		// int result = calculator.calc(argument.getA(), argument.getB()); 
 
-		System.out.println("result = " + result);
+		// System.out.println("result = " + result);
+
+		/*
+		 * ↑の主処理は「Frontend」クラスに集約したので以下の実装で済む(スッキリ)
+		 */
+		Frontend frontend = context.getBean(Frontend.class);
+		frontend.run();
 	}
 
 }

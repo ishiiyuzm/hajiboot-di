@@ -29,4 +29,9 @@ public class AppConfig {
         return new ScannerArgumentResolver();
     }
 
+    @Bean
+    Frontend frontend() {
+        return new Frontend();
+    }
+
 }
